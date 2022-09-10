@@ -1,0 +1,13 @@
+.nav {
+  grid-area: sidebar;
+  background-color: cadetblue;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.item {
+  padding: 5px;
+}
