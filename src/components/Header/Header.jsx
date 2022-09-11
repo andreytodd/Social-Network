@@ -1,7 +1,7 @@
 import styles from './Header.module.css'
 
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={styles.header}>
       <img

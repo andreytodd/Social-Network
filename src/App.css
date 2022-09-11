@@ -9,3 +9,8 @@
   background-color: #fff;
   color: #444;
 }
+
+.app-wrapper-content {
+  grid-area: content;
+  background-color: bisque;
+}
