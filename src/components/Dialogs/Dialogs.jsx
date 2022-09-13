@@ -1,37 +1,40 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Dialogs.module.css";
 
+const DialogItem = (props) => {
+
+  let path = "/dialogs/" +  props.id  
+
+  return (
+    <div className={styles.dialog}>
+      <NavLink to={path}>{props.name}</NavLink>
+    </div>
+  );
+};
+
+const Message = (props) => {
+  return (
+    <div className={styles.message}>{props.text}</div>
+  )
+}
+
 const Dialogs = (props) => {
   return (
     <div>
       <div className={styles.dialogs}>
         <div className={styles.dialogsItems}>
-          <div className={styles.dialog + " " + styles.active}>
-            <NavLink to="/dialogs/1">Andrey</NavLink>
-          </div>
-          <div className={styles.dialog}>
-            <NavLink to="/dialogs/2">Kris</NavLink>
-          </div>
-          <div className={styles.dialog}>
-            <NavLink to="/dialogs/3">Dima</NavLink>
-          </div>
-          <div className={styles.dialog}>
-            <NavLink to="/dialogs/4">Anton</NavLink>
-          </div>
-          <div className={styles.dialog}>
-            <NavLink to="/dialogs/5">Grisha</NavLink>
-          </div>
-          <div className={styles.dialog}>
-            <NavLink to="/dialogs/6">Egor</NavLink>
-          </div>
-          <div className={styles.dialog}>
-            <NavLink to="/dialogs/7">Sergey</NavLink>
-          </div>
+          <DialogItem name="Andrey" id="1" />
+          <DialogItem name="Kris" id="2" />
+          <DialogItem name="Dima" id="3" />
+          <DialogItem name="Anton" id="4" />
+          <DialogItem name="Grisha" id="5" />
+          <DialogItem name="Egor" id="6" />
+          <DialogItem name="Sergey" id="7" />
         </div>
         <div className={styles.messages}>
-          <div className={styles.message}>Hello there</div>
-          <div className={styles.message}>Nice to meet you</div>
-          <div className={styles.message}>Where are you from?</div>
+          <Message text="Hi how are you" />
+          <Message text="Nice to meet you" />
+          <Message text="Where are you from?" />
         </div>
       </div>
     </div>
