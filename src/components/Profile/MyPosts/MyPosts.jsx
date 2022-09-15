@@ -1,7 +1,12 @@
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+  let postElements = props.postData.map((post) => (
+    <Post message={post.message} likes={post.likesCount} />
+  ));
+
   return (
     <div className={classes.postsBlock}>
       <h2>My posts</h2>
@@ -13,11 +18,7 @@ const MyPosts = () => {
           <button>Add Post</button>
         </div>
       </div>
-      <div className={classes.posts}>
-        <Post name="Andrey" message="hi, how are you?" likes="20" />
-        <Post name="Dima" message="I am Dima" likes="25" />
-        <Post name="Artem" message="This is my first post" likes="10" />
-      </div>
+      <div className={classes.posts}>{postElements}</div>
     </div>
   );
 };
