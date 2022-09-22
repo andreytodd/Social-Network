@@ -1,6 +1,7 @@
 .dialogs {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    align-items: center;
 }
 
 .dialogsItems {
@@ -16,9 +17,6 @@
     color: red;
 }
 
-/*.dialog a:visited {*/
-/*    color: rgb(82, 82, 82);*/
-/*}*/
 
 .messages {
     padding: 10px;

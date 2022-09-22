@@ -7,6 +7,13 @@
     padding: 10px;
 }
 
+.dialog img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding-right: 5px;
+}
+
 .dialog a {
     text-decoration: none;
      color: rgb(82, 82, 82)
@@ -15,10 +22,6 @@
 .dialogsItems .active {
     color: red;
 }
-
-/*.dialog a:visited {*/
-/*    color: rgb(82, 82, 82);*/
-/*}*/
 
 .messages {
     padding: 10px;
