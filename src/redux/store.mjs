@@ -1,5 +1,6 @@
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST = "UPDATE-NEW-POST";
+import dialogsReducer from "./dialogs-reducer.mjs";
+import profileReducer from "./profile-reducer.mjs";
+
 
 let store = {
   _callSubsriber() {
@@ -36,7 +37,10 @@ let store = {
         { id: 7, message: "Hi" },
         { id: 8, message: "Hi from index.js" },
       ],
+      newMessageBody: "",
     },
+
+    sidebar: {},
   },
 
   getState() {
@@ -64,27 +68,14 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0,
-      };
 
-      this._state.profilePage.postData.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this._callSubsriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubsriber(this._state);
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._callSubsriber(this._state);
+
   },
 };
 
-export const createPostActionCreator = () => ({ type: ADD_POST });
-
-export const onPostChangeActionCreator = (text) => 
-({ type: UPDATE_NEW_POST, newText: text });
 
 export default store;
 

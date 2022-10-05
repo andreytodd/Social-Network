@@ -4,7 +4,7 @@ import React from "react";
 import {
   createPostActionCreator,
   onPostChangeActionCreator,
-} from "../../../redux/state.mjs";
+} from "../../../redux/profile-reducer.mjs";
 
 const MyPosts = (props) => {
   let postElements = props.postData.map((post) => (
