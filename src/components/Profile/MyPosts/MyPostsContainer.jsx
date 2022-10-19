@@ -6,7 +6,7 @@ import {
   onPostChangeActionCreator,
 } from "../../../redux/profile-reducer.mjs";
 
-const MyPosts = (props) => {
+const MyPostsContainer = (props) => {
   let postElements = props.postData.map((post) => (
     <Post message={post.message} likes={post.likesCount} />
   ));
