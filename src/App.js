@@ -18,16 +18,12 @@ const App = (props) => {
             <Route
               path="/profile/*"
               element={
-                <Profile
-                  store={props.store}
-                />
+                <Profile />
               }
             />
             <Route
               path="/dialogs/*"
-              element={<DialogsContainer
-                store={props.store}
-              />}
+              element={<DialogsContainer />}
             />
           </Routes>
         </div>
